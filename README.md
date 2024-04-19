@@ -53,3 +53,10 @@ Para ejecutar las pruebas automatizadas de este proyecto, asegúrate de estar de
 
 ```
 composer test
+```
+
+## Fuente y otros enlaces
+Ejemplos y e ideas sacadas del curos patrones de diseño de [Codenip](https://www.youtube.com/@Codenip) y su lista de reproducción Patrones de diseño
+[aquí](https://www.youtube.com/playlist?list=PLWpsZlKx38t84dV5eKAD5VAeiOe4A0UKT)
+
+También puedes obtener más recursos de programación en el blog [Notas Web](https://notasweb.me/blog/)
