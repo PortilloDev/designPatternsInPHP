@@ -56,7 +56,7 @@ composer test
 ```
 
 ## Fuente y otros enlaces
-Ejemplos y e ideas sacadas del curos patrones de diseño de [Codenip](https://www.youtube.com/@Codenip) y su lista de reproducción Patrones de diseño
+Ejemplos y e ideas sacadas de la lista de reproducción, patrones de diseño de [Codenip](https://www.youtube.com/@Codenip) 
 [aquí](https://www.youtube.com/playlist?list=PLWpsZlKx38t84dV5eKAD5VAeiOe4A0UKT)
 
 También puedes obtener más recursos de programación en el blog [Notas Web](https://notasweb.me/blog/)
