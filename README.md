@@ -56,9 +56,10 @@ composer test
 ```
 
 ## Fuente y otros enlaces
-Ejemplos y e ideas sacadas de la lista de reproducción, patrones de diseño de 
-Canal => [Codenip](https://www.youtube.com/@Codenip) 
-Lista => [aquí](https://www.youtube.com/playlist?list=PLWpsZlKx38t84dV5eKAD5VAeiOe4A0UKT)
+Ejemplos y e ideas sacadas de la lista de reproducción, patrones de diseño de   
 
-También puedes obtener más recursos de programación en el 
+Canal => [Codenip](https://www.youtube.com/@Codenip)   
+Lista => [aquí](https://www.youtube.com/playlist?list=PLWpsZlKx38t84dV5eKAD5VAeiOe4A0UKT)  
+
+También puedes obtener más recursos de programación en el   
 blog  => [Notas Web](https://notasweb.me/blog/)
