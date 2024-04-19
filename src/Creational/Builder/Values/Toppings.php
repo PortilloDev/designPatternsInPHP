@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Codenip\Creational\Builder\Values;
 
 enum Toppings: string
@@ -10,5 +8,7 @@ enum Toppings: string
     public const TUNA = 'Tuna';
     public const MEAT = 'Meat';
     public const HAM = 'Ham';
+    public const BACON = 'Bacon';
     public const ONION = 'Onion';
 }
+
