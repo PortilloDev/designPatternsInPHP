@@ -8,16 +8,15 @@ use Codenip\Creational\Builder\Values\Cheese;
 use Codenip\Creational\Builder\Values\Dough;
 use Codenip\Creational\Builder\Values\Size;
 
-class BuilderTerst extends \PHPUnit\Framework\TestCase
+class BuilderTest extends \PHPUnit\Framework\TestCase
 {
     public function testCreatePizza(): void
     {
         $pizza = (new PizzaBuilder())
-            ->withDough(Dough::THIN_CRUST)
-            ->withSize(Size::MEDIUM)
-            ->withCheese(Cheese::MOZZARELLA)
-            ->withTopping(new Topping('Mushrooms'))
-            ->withTopping(new Topping('Tomatoes'))
+            ->setDough(Dough::THIN_CRUST)
+            ->setSize(Size::MEDIUM)
+            ->setCheese(Cheese::MOZZARELLA)
+            ->setToppings([new Topping('Mushrooms'), new Topping('Tomatoes')])
             ->build();
 
         $this->assertEquals(Dough::THIN_CRUST, $pizza->getDough());

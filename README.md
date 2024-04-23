@@ -12,9 +12,49 @@ Los patrones creacionales proporcionan mecanismos de creación de objetos que au
 
 #### Builder
 
-El patrón Builder se utiliza para permitir la creación de una variedad de objetos complejos desde un objeto fuente. Separa la construcción de un objeto complejo de su representación, de modo que el mismo proceso de construcción puede crear diferentes representaciones.
+El patrón de diseño Builder es un patrón creacional que se utiliza para construir objetos complejos paso a paso. A diferencia de otros patrones creacionales, como Factory y Abstract Factory, que crean el objeto de una sola vez, el patrón Builder permite la creación del objeto paso a paso bajo el control del director (una clase que orquesta la construcción del objeto).
+
+##### Funcionamiento del patrón Builder:
+- Separación del proceso de construcción: El patrón Builder desacopla la construcción de un objeto complejo de su representación, de modo que el mismo proceso de construcción puede crear diferentes representaciones según las necesidades.
+- Builder (Constructor): Esta es una interfaz que define todos los pasos necesarios para construir un objeto complejo. Cada paso está diseñado para manejar un aspecto del objeto a construir, como construir las paredes o instalar el techo en una casa.
+- Concrete Builder (Constructor Concreto): Clases que implementan la interfaz Builder y proporcionan implementaciones específicas de los pasos definidos en Builder. Cada versión del Builder construye una parte del objeto de manera diferente o aporta variaciones en la construcción.
+- Director: Una clase que define el orden en el que se llaman los pasos de construcción, sin preocuparse por los detalles específicos de los productos o cómo se ensamblan los componentes. Esto permite producir diferentes tipos y representaciones de un objeto empleando el mismo proceso de construcción.
+- Producto: El objeto complejo que se construye. El Builder devuelve el producto como resultado de los esfuerzos de construcción.
+
+Creación de objetos complejos: Utilizado cuando hay necesidad de crear estructuras complejas, como un documento con formato o un menú de comidas, donde cada parte del objeto puede necesitar diferentes procesos de construcción o configuraciones.
+Control sobre el proceso de construcción: Permite variar el producto interno durante la construcción por parte de diferentes builders concretos.
+
+##### Ventajas:
+Permite variar un producto sin alterar la clase director.
+Encapsula el código para la construcción y representación: el código de construcción está aislado del código que utiliza el objeto.
+Proporciona control sobre el proceso de construcción.
+##### Desventajas:
+Puede complicar el código debido a la creación de múltiples clases adicionales.
+Los clientes deben conocer las diferencias entre los builders para poder elegir y configurar el correcto.
 
 Para más detalles, puedes consultar la documentación específica de este patrón [aquí](https://designpatternsphp.readthedocs.io/en/latest/Creational/Builder/README.html).
+
+---
+
+#### Singleton
+El patrón de diseño Singleton es un patrón creacional que tiene como objetivo garantizar que una clase tenga una única instancia en toda la aplicación y proporcionar un punto de acceso global a dicha instancia. Se utiliza comúnmente para controlar el acceso a recursos compartidos, como conexiones a bases de datos o configuraciones del sistema.
+
+##### Funcionamiento del patrón Singleton:
+- Instancia Única: Asegura que una clase solo tenga una única instancia en la ejecución de un programa. Esto se logra proporcionando un método estático en la clase que devuelve siempre la misma instancia.
+- Acceso Global: Ofrece un acceso global a esa instancia única a través de un método estático. Esto facilita el acceso desde cualquier parte del código sin necesidad de pasar la instancia de manera explícita.
+- Control de Creación: El constructor de la clase se define como privado o protegido para evitar que otras clases puedan instanciarla directamente. Esto ayuda a controlar cómo y cuándo se accede a la instancia única.
+##### Ventajas:
+- Ahorro de recursos, ya que se evita la creación de múltiples instancias de una misma clase.
+- Acceso controlado y centralizado a recursos o servicios compartidos.
+##### Desventajas:
+- Puede introducir un estado global en la aplicación, lo que hace que el código sea más difícil de entender y de probar.
+- La implementación de Singleton en entornos multihilo puede requerir mecanismos adicionales para evitar problemas de concurrencia, lo que puede complicar el diseño.
+
+Para más detalles, puedes consultar la documentación específica de este patrón [aquí](https://designpatternsphp.readthedocs.io/en/latest/Creational/Singleton/README.html).
+
+---
+---
+
 
 ### Estructurales
 
@@ -24,9 +64,24 @@ Los patrones estructurales explican cómo ensamblar objetos y clases en estructu
 
 Estos patrones se ocupan de la comunicación efectiva y la asignación de responsabilidades entre objetos.
 
+---
+
 #### Specification
 
-El patrón Specification se utiliza para crear una especificación que determine si un objeto cumple ciertos criterios. Es útil para separar la lógica de selección de objetos de la lógica de negocio en sí, permitiendo una mayor flexibilidad y reusabilidad de las reglas de selección.
+El patrón de diseño Specification es un patrón comportamental que permite encapsular la lógica de negocio que especifica si un objeto cumple con ciertos criterios. Este patrón se utiliza principalmente para la selección de objetos de acuerdo con un conjunto de atributos combinables y reutilizables, permitiendo de esta manera una gran flexibilidad en la definición de reglas sin comprometer el mantenimiento del código.
+##### Funcionamiento del patrón Specification:
+- Specification (Especificación): Esta es una interfaz que define un método isSatisfiedBy que toma un objeto candidato y devuelve un booleano indicando si el objeto cumple con la especificación.
+- Concrete Specifications (Especificaciones Concretas): Clases que implementan la interfaz de especificación y representan reglas de negocio específicas. Cada una de estas clases encapsula una regla única.
+- Combinación de Especificaciones: Las especificaciones pueden diseñarse para ser combinables, utilizando operaciones lógicas como AND, OR y NOT. Esto permite construir especificaciones complejas a partir de otras más simples sin alterar las clases existentes.
+
+##### Ventajas:
+- Reusabilidad: Las especificaciones individuales pueden ser reutilizadas a través del sistema sin replicación de código.
+- Combinable: Al permitir combinaciones lógicas de especificaciones, se pueden crear reglas complejas a partir de reglas más simples, lo que mejora la mantenibilidad.
+- Desacoplamiento: Reduce el acoplamiento entre el código que ejecuta la selección y las reglas reales que definen qué objetos son seleccionados.
+
+##### Desventajas:
+- Complejidad: La implementación de múltiples especificaciones y su combinación puede llevar a un aumento en la complejidad del diseño.
+- Sobrecarga: Si no se implementa cuidadosamente, puede llevar a una sobrecarga en la evaluación de si los objetos cumplen con las especificaciones, especialmente si el conjunto de datos es grande.
 
 Para más detalles, puedes consultar la documentación específica de este patrón [aquí](https://designpatternsphp.readthedocs.io/en/latest/Behavioral/Specification/README.html).
 

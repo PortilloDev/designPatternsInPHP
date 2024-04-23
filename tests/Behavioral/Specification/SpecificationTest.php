@@ -83,7 +83,7 @@ class SpecificationTest extends TestCase
     {
         $users = [
             new User(1, 'Juan', 38, true),
-            new User(2, 'Moein', 10, true),
+            new User(2, 'Iván', 10, true),
         ];
 
         $repository = new UserRepository($users);

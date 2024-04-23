@@ -61,4 +61,37 @@ class PizzaBuilder
     {
         return new Pizza($this->size, $this->dough, $this->cheese, $this->toppings);
     }
+
+    /**
+     * @return string
+     */
+    public function getSize(): string
+    {
+        return $this->size;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDough(): string
+    {
+        return $this->dough;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCheese(): string
+    {
+        return $this->cheese;
+    }
+
+    /**
+     * @return array
+     */
+    public function getToppings(): array
+    {
+        return $this->toppings;
+    }
+
 }
