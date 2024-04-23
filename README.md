@@ -60,6 +60,29 @@ Para más detalles, puedes consultar la documentación específica de este patr�
 
 Los patrones estructurales explican cómo ensamblar objetos y clases en estructuras más grandes, mientras se mantiene la flexibilidad y eficiencia de la estructura.
 
+####  Data Mapper
+El patrón Data Mapper es un patrón de diseño estructural que se utiliza para transferir datos entre sistemas de almacenamiento de datos y objetos en memoria de una manera que separa la lógica de persistencia de los objetos de dominio. Este patrón es parte de la categoría de patrones de acceso a datos y es fundamental para mantener una baja dependencia entre la capa de persistencia y la capa de dominio.
+
+##### Funcionamiento del patrón Data Mapper:
+- Mapper (Mapeador): Una clase que actúa como un mediador entre la base de datos y la lógica de negocio. El mapeador se encarga de transferir datos entre la base de datos y los objetos en memoria (objetos de dominio), asegurándose de que la lógica de interacción con la base de datos y la lógica de negocio permanezcan desacopladas.
+- Dominio: Los objetos del dominio representan las entidades del negocio y deben estar libres de responsabilidades relacionadas con la persistencia de datos. Estos objetos contienen datos y comportamiento que son relevantes exclusivamente para la lógica del negocio.
+- Base de datos: El almacenamiento de datos donde se persisten las entidades. El mapeador interactúa con este componente para cargar y almacenar estados de objetos.
+
+Usos comunes del patrón Data Mapper:
+Aplicaciones con complejas lógicas de negocio: Donde es crucial mantener la capa de negocio separada de la capa de acceso a datos para facilitar el mantenimiento y la escalabilidad.
+Framework ORM (Mapeo Objeto-Relacional): Muchos frameworks ORM implementan una forma de Data Mapper para ayudar en la tarea de mapear tablas de bases de datos a clases de objetos en el código.
+
+##### Ventajas:
+- Separación de responsabilidades: Al mantener la lógica de la base de datos separada de la lógica del negocio, se facilita el mantenimiento y la escalabilidad de la aplicación.
+- Flexibilidad: Permite cambiar la estructura de la base de datos sin necesidad de modificar las clases de dominio y viceversa.
+- Reutilización: Facilita la reutilización del código del dominio en diferentes aplicaciones sin arrastrar consigo la lógica de acceso a datos.
+
+##### Desventajas:
+- Complejidad: Introduce más clases y abstracciones, lo que puede aumentar la complejidad del sistema.
+- Rendimiento: Puede haber un impacto en el rendimiento debido a la capa adicional de abstracción, especialmente si no se implementa de manera eficiente.
+
+Para más detalles, puedes consultar la documentación específica de este patrón [aquí](https://designpatternsphp.readthedocs.io/en/latest/Structural/DataMapper/README.html).
+
 ### Comportamentales
 
 Estos patrones se ocupan de la comunicación efectiva y la asignación de responsabilidades entre objetos.
